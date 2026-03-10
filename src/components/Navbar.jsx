@@ -3,6 +3,7 @@ import React from "react";
 function Navbar({ cartCount }) {
   return (
     <nav style={styles.navbar}>
+
       <h2 style={styles.logo}>🌿 Paradise Nursery</h2>
 
       <div style={styles.links}>
@@ -10,6 +11,7 @@ function Navbar({ cartCount }) {
         <a href="/plants">Plants</a>
         <a href="/cart">Cart 🛒 ({cartCount})</a>
       </div>
+
     </nav>
   );
 }
@@ -20,8 +22,8 @@ const styles = {
     justifyContent: "space-between",
     alignItems: "center",
     background: "#2e7d32",
-    color: "white",
-    padding: "15px"
+    padding: "15px",
+    color: "white"
   },
   logo: {
     margin: 0
