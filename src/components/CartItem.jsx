@@ -2,23 +2,33 @@ import React, { useState } from "react";
 
 function CartItem() {
 
-  const [quantity, setQuantity] = useState(1);
+  const [quantity,setQuantity] = useState(1);
+
   const price = 10;
 
-  const handleIncrement = () => setQuantity(quantity + 1);
-
-  const handleDecrement = () => {
-    if (quantity > 1) setQuantity(quantity - 1);
+  const handleIncrement = () => {
+    setQuantity(quantity + 1);
   };
 
-  const handleDelete = () => alert("Item removed");
+  const handleDecrement = () => {
+    if(quantity > 1){
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handleDelete = () => {
+    alert("Item removed from cart");
+  };
+
+  const total = price * quantity;
 
   return (
+
     <div>
 
       <h2>Shopping Cart</h2>
 
-      <img src="https://via.placeholder.com/150" />
+      <img src="https://via.placeholder.com/150"/>
 
       <h3>Plant Item</h3>
 
@@ -34,19 +44,22 @@ function CartItem() {
 
       </div>
 
-      <p>Total: ${price * quantity}</p>
+      <p>Total Cost: ${total}</p>
 
       <button onClick={handleDelete}>Delete</button>
 
-      <br /><br />
+      <br/><br/>
 
-      <button onClick={() => alert("Checkout coming soon")}>
+      <button onClick={()=>alert("Checkout coming soon")}>
         Checkout
       </button>
 
-      <button>Continue Shopping</button>
+      <button>
+        Continue Shopping
+      </button>
 
     </div>
+
   );
 }
 
